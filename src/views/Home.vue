@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .home {
   height: 4000px;
   padding: 12px;
