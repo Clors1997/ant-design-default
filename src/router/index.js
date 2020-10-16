@@ -1,30 +1,95 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: '/user',
+    component: () =>
+      import(/* webpackChunkName: "user" */ '../layouts/UserLayout.vue'),
+    redirect: '/user/login',
+    children: [
+      {
+        path: '/user/login',
+        name: 'login',
+        component: () =>
+          import(/* webpackChunkName: "user" */ '../views/User/Login.vue')
+      },
+      {
+        path: '/user/register',
+        name: 'register',
+        component: () =>
+          import(/* webpackChunkName: "user" */ '../views/User/Register.vue')
+      }
+    ]
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/',
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "home" */ '../layouts/HomeLayout.vue'),
+    redirect: '/home',
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        showInMenu: true,
+        meta: {
+          title: 'Home'
+        },
+        component: () =>
+          import(/* webpackChunkName: "home" */ '../views/Home.vue')
+      },
+      {
+        path: '/ipad',
+        name: 'ipad',
+        showInMenu: true,
+        meta: {
+          title: 'iPad'
+        },
+        component: () =>
+          import(/* webpackChunkName: "home" */ '../views/iPad.vue')
+      },
+      {
+        path: '/iphone',
+        name: 'iphone',
+        showInMenu: true,
+        meta: {
+          title: 'iPone'
+        },
+        component: () =>
+          import(/* webpackChunkName: "home" */ '../views/iPhone.vue')
+      },
+      {
+        path: '/mac',
+        name: 'mac',
+        showInMenu: true,
+        meta: {
+          title: 'Mac'
+        },
+        component: () =>
+          import(/* webpackChunkName: "home" */ '../views/Mac.vue')
+      }
+    ]
   }
-];
+]
 
 const router = new VueRouter({
-  mode: "history",
   base: process.env.BASE_URL,
   routes
-});
+})
 
-export default router;
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  // if (to.path !== '/login') {
+  //   if (!localStorage.token) {
+  //     return next('/admin/login')
+  //   } else if (store.getters.getStorage('token') != localStorage.token) {
+  //     store.commit('setStorage', { key: 'token', value: localStorage.token })
+  //     //重新获取info
+  //   }
+  // }
+  next()
+})
+
+export default router
