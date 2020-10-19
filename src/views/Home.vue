@@ -27,6 +27,7 @@
         >{{ $store.state.demoService.vuexdemo }}</a-col
       >
     </a-row>
+    <a-button @click="testDebounce()">testDebounce</a-button>
     <!-- icon-font 本地组件化 -->
     <!-- <Logo class="other-icon" /> -->
   </div>
@@ -35,6 +36,7 @@
 <script>
 import moment from 'moment'
 import { test } from '@/api/test.js'
+import { debounce } from 'lodash'
 // import Logo from '@/assets/ic_others.svg'
 export default {
   name: 'Home',
@@ -52,7 +54,10 @@ export default {
       })
   },
   methods: {
-    moment
+    moment,
+    testDebounce: debounce(() => {
+      console.log(111)
+    }, 500)
   }
 }
 </script>
