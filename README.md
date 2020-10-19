@@ -32,6 +32,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 vetur eslink pretter
 
 ### example vscode config
+```
 {
     "[vue]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -63,3 +64,4 @@ vetur eslink pretter
     "vetur.completion.autoImport": false,
     "eslint.runtime": ""
 }
+```
