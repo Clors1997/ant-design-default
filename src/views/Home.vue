@@ -27,22 +27,28 @@
         >{{ $store.state.demoService.vuexdemo }}</a-col
       >
     </a-row>
-    <a-button @click="testDebounce()">testDebounce</a-button>
+    <!-- <vue-tabs-swiper touch-animation :threshold="50">
+      <div tab-label="热点">热点</div>
+      <div tab-label="发现">发现</div>
+      <div tab-label="关注">关注</div>
+    </vue-tabs-swiper> -->
     <!-- icon-font 本地组件化 -->
     <!-- <Logo class="other-icon" /> -->
   </div>
 </template>
 
 <script>
+import VueTabsSwiper from 'vue-tabs-swiper'
 import moment from 'moment'
 import { test } from '@/api/test.js'
 import { debounce } from 'lodash'
 // import Logo from '@/assets/ic_others.svg'
 export default {
   name: 'Home',
-  // components: {
-  //   Logo
-  // },
+  components: {
+    // Logo,
+    [VueTabsSwiper.name]: VueTabsSwiper
+  },
   mounted() {
     //本地请求演示
     test()
@@ -62,7 +68,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .home {
   height: 4000px;
   padding: 12px;
