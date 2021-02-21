@@ -5,24 +5,22 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/user',
+    path: '/login',
+    name: 'login',
+    meta: {
+      title: '登陆'
+    },
     component: () =>
-      import(/* webpackChunkName: "user" */ '../layouts/UserLayout.vue'),
-    redirect: '/user/login',
-    children: [
-      {
-        path: '/user/login',
-        name: 'login',
-        component: () =>
-          import(/* webpackChunkName: "user" */ '../views/User/Login.vue')
-      },
-      {
-        path: '/user/register',
-        name: 'register',
-        component: () =>
-          import(/* webpackChunkName: "user" */ '../views/User/Register.vue')
-      }
-    ]
+      import(/* webpackChunkName: "user" */ '../views/User/Login.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    meta: {
+      title: '注册'
+    },
+    component: () =>
+      import(/* webpackChunkName: "user" */ '../views/User/Register.vue')
   },
   {
     path: '/',
@@ -35,17 +33,19 @@ const routes = [
         name: 'home',
         showInMenu: true,
         meta: {
-          title: 'Home'
+          title: 'Home',
+          icon: 'home'
         },
         component: () =>
           import(/* webpackChunkName: "home" */ '../views/Home.vue')
       },
       {
-        path: '/ipad',
-        name: 'ipad',
+        path: '/list',
+        name: 'list',
         showInMenu: true,
         meta: {
-          title: 'iPad'
+          title: 'List',
+          icon: 'unordered-list'
         },
         component: () =>
           import(/* webpackChunkName: "home" */ '../views/iPad.vue')
@@ -55,7 +55,8 @@ const routes = [
         name: 'iphone',
         showInMenu: true,
         meta: {
-          title: 'iPone'
+          title: 'iPone',
+          icon: 'home'
         },
         component: () =>
           import(/* webpackChunkName: "home" */ '../views/iPhone.vue')
@@ -65,7 +66,8 @@ const routes = [
         name: 'mac',
         showInMenu: true,
         meta: {
-          title: 'Mac'
+          title: 'Mac',
+          icon: 'home'
         },
         component: () =>
           import(/* webpackChunkName: "home" */ '../views/Mac.vue')

@@ -8,14 +8,14 @@ module.exports = {
       }
     }
   },
-  configureWebpack: {
-    plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
-    resolve: {
-      alias: {
-        '@ant-design/icons/lib/dist$': path.resolve(__dirname, './src/icons.js')
-      }
-    }
-  },
+  // configureWebpack: {
+  //   plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
+  //   resolve: {
+  //     alias: {
+  //       '@ant-design/icons/lib/dist$': path.resolve(__dirname, './src/icons.js')
+  //     }
+  //   }
+  // },
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
 

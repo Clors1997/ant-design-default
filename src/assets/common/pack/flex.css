@@ -1,0 +1,114 @@
+/* 怎么初始化flex布局,初始化的主轴是从左到右 */
+.flex {
+  display: flex;
+}
+/* 主轴是从左到右 */
+.flex-row {
+  flex-direction: row;
+}
+/* 主轴是从上到下 */
+.flex-column {
+  flex-direction: column;
+}
+/* 主轴是从右到左 */
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+/* 主轴是从下到上 */
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+/* 换行 */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+/* 不换行 */
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+/* 从起始点开始 */
+.justify-start {
+  justify-content: flex-start;
+}
+/* 从末尾点开始 */
+.justify-end {
+  justify-content: flex-end;
+}
+/* 根据宽度设定项目之间的间距（相同） */
+.justify-between {
+  justify-content: space-between;
+}
+/* 主轴居中 */
+.justify-center {
+  justify-content: center;
+}
+/* 交叉轴居中 */
+.align-center {
+  align-items: center;
+}
+/* 交叉轴占满 */
+.align-stretch {
+  align-items: stretch;
+}
+/* 交叉轴开始位置 */
+.align-start {
+  align-items: flex-start;
+}
+/* 交叉轴末尾位置 */
+.align-end {
+  align-items: flex-end;
+}
+/* 多行之间的排序 */
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+/* 子项的属性 */
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.flex-shrink {
+  flex-shrink: 0;
+}
+/* flex内容居中 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

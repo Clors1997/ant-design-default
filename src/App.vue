@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style lang="less">
+@import './assets/common/common.css';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
